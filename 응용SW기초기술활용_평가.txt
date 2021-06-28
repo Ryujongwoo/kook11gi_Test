@@ -1,0 +1,49 @@
+calendarModule.py
+
+def isLeapYear(year):
+    return ①
+
+def lastDay(year, month):
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    days[1] = 29 if ② else 28
+    return days[month-1]
+
+def totalDay(year, month, day):
+    total = (year - 1) * 365 + (year - 1) // 4 - (year-1) // 100 + (year - 1) // 400
+    for i in range(1, month):
+        total += ③
+    return total + day
+
+def weekDay(year, month, day):
+    return ④
+
+if ⑤
+    print(isLeapYear(2000))
+    print(lastDay(2021, 7))
+    print(totalDay(2021, 1, 14))
+    print(weekDay(2021, 1, 14))
+
+
+
+
+calendar.ipynb
+
+⑥
+
+year, month = map(int, input('달력을 출력하려는 년과 월을 입력하세요 : ').⑦)
+
+print('=' * 28)
+print('         {0:4d}년{1:2d}월'.format(year, month))
+print('=' * 28)
+print(' 일  월  화  수  목  금  토 ')
+print('=' * 28)
+
+for i in range(⑧):
+    print('    ', end = '')
+for i in range(1, calendarModule.lastDay(year, month) + 1):
+    print(' {0:2d} '.format(i), end = '')
+    if ⑨ and ⑩:
+        print()
+print('\n' + '=' * 28)
+
+정답을 정확히 맞춰야 10점
